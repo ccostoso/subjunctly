@@ -6,6 +6,10 @@ module.exports = (sequelize, DataTypes) => {
             unique: true,
         },
         alt_names: DataTypes.ARRAY(DataTypes.DECIMAL),
+        type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         exen_1: {
             type: DataTypes.TEXT,
             allowNull: false,

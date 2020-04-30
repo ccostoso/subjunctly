@@ -2,18 +2,31 @@ const db = require("../models");
 
 // Defining methods for the expressionsController
 module.exports = {
+    pullList: function(req, res) {
+        var query = {};
+        if (req.query.name) {
+            query.name = req.query.name;
+        }
+
+        db.Expression.findAll({
+            where: query,
+            attributes: ["name", "type"],
+        }).then(function (dbExpression) {
+            res.json(dbExpression);
+        })
+    },
     // GET route for getting all of the expressions
     findAll: function (req, res) {
         var query = {};
-        if (req.query.search) {
-            query.search = req.query.search;
+        if (req.query.name) {
+            query.name = req.query.name;
         }
         // Here we add an "include" property to our options in our findAll query
         // We set the value to an array of the models we want to include in a left outer join
-        // In this case, just db.Author
+        // In this case, just db.Expression
         db.Expression.findAll({
             where: query,
-            // include: [db.Author]
+            // include: [db.Expression]
         }).then(function (dbExpression) {
             res.json(dbExpression);
         });
@@ -22,12 +35,12 @@ module.exports = {
     findById: function (req, res) {
         // Here we add an "include" property to our options in our findOne query
         // We set the value to an array of the models we want to include in a left outer join
-        // In this case, just db.Author
+        // In this case, just db.Expression
         db.Expression.findOne({
             where: {
                 id: req.params.id
             },
-            // include: [db.Author]
+            // include: [db.Expression]
         }).then(function (dbExpression) {
             res.json(dbExpression);
         });
