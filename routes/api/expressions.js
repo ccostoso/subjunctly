@@ -10,8 +10,11 @@ router.route("/")
 router
   .route("/:id")
   .get(expressionsController.findWhere)
-  .get(expressionsController.findById)
   .put(expressionsController.update)
   .delete(expressionsController.remove);
+
+router
+  .route("/details/:id")
+  .get(expressionsController.findOne);
 
 module.exports = router;

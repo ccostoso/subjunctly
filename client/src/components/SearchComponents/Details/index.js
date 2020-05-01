@@ -11,6 +11,7 @@ function Details(props) {
                 <p><strong>Yes</strong>, "accepter" requires the subjunctive.</p>
                 <blockquote className="bg-light py-2 px-1 rounded"><em>"J’accepte que tu sois toujours en retard."</em></blockquote>
                 <p>I accept that you are always late.</p>
+                <p>{JSON.stringify(props.selected)}</p>
             </div>
         </article>
     )

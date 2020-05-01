@@ -5,10 +5,13 @@ function ResultListItem(props) {
     return (
         <li 
             className="list-group-item"
-            value={props.result.name}
-            onClick={e => props.setActive(e.target.value)}
+            onClick={e => props.setActive(props.result.source_html)}
         >
-            {props.result.name}
+            <a
+                
+            >
+                {props.result.name}
+            </a>
         </li>
     )
 }

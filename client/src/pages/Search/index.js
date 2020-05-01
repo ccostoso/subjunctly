@@ -10,11 +10,12 @@ function Search() {
     const [search, setSearch] = useState("");
     const [results, setResults] = useState([]);
     const [active, setActive] = useState("");
+    const [selected, setSelected] = useState({});
 
     useEffect(() => {
         async function fetchQuery() {
             const response = await (await API.getExpressions(search)).json();
-            console.log(response);
+            
             if (!response.status === 200) {
                 throw new Error(
                     `${response.status} ${response.statusText}`
@@ -27,19 +28,26 @@ function Search() {
         search && fetchQuery();
     }, [search]);
 
-    // useEffect(() => {
-    //     async function fetchQuery() {
-    //         const response = await API.getExpression(active);
-    //         if (!response.status === 200) {
-    //             throw new Error(
-    //                 `${response.status} ${response.statusText}`
-    //             );
-    //         }
-    //         setResults(response.json());
-    //     }
+    useEffect(() => {
+        async function fetchSelected() {
+            const response = await API.getExpression(active);
+            
+            if (!response.status === 200) {
+                throw new Error(
+                    `${response.status} ${response.statusText}`
+                );
+            }
 
-    //     fetchQuery();
-    // }, [active]);
+            const json = await response.json();
+            setSelected(json);
+        }
+
+        active && fetchSelected();
+    }, [active]);
+
+    useEffect(() => {
+        
+    })
 
     return (
         <main className="container mt-4">
@@ -59,6 +67,7 @@ function Search() {
                 <div className="col-md-6">
                     <Details
                         active={active}
+                        selected={selected}
                     />
                 </div>
             </section>
