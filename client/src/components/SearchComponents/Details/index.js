@@ -4,10 +4,14 @@ import "./style.css";
 function Details(props) {
     return (
         <article className="card">
-            <header className="card-header">
-                <h4 className="card-title"></h4>
+            <header className="card-header bg-success text-white">
+                <h5 className="card-title my-0">accepter</h5>
             </header>
-            <p>{props.details}</p>
+            <div className="card-body">
+                <p><strong>Yes</strong>, "accepter" requires the subjunctive.</p>
+                <blockquote className="bg-light py-2 px-1 rounded"><em>"J’accepte que tu sois toujours en retard."</em></blockquote>
+                <p>I accept that you are always late.</p>
+            </div>
         </article>
     )
 }

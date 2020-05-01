@@ -1,35 +1,30 @@
 const db = require("../models");
+const { Op } = require("sequelize");
 
 // Defining methods for the expressionsController
 module.exports = {
-    pullList: function(req, res) {
-        var query = {};
-        if (req.query.name) {
-            query.name = req.query.name;
+    // GET route for getting all of the expressions with given parameters
+    findWhere: function (req, res) {
+        const query = req.params.id.split(" ").map(string => `%${string}%`)
+        if (req.params.id) {
+            console.log("QUERY", query);
+            db.Expression.findAll({
+                where: {
+                    source_html: {
+                        [Op.like]: {
+                            [Op.any]: query
+                        }
+                    }
+                },
+                attributes: ["name", "type", "source_html", "id"],
+            }, 
+            { 
+                limit: 10 
+            }
+            ).then(function (dbExpression) {
+                res.json(dbExpression);
+            })
         }
-
-        db.Expression.findAll({
-            where: query,
-            attributes: ["name", "type"],
-        }).then(function (dbExpression) {
-            res.json(dbExpression);
-        })
-    },
-    // GET route for getting all of the expressions
-    findAll: function (req, res) {
-        var query = {};
-        if (req.query.name) {
-            query.name = req.query.name;
-        }
-        // Here we add an "include" property to our options in our findAll query
-        // We set the value to an array of the models we want to include in a left outer join
-        // In this case, just db.Expression
-        db.Expression.findAll({
-            where: query,
-            // include: [db.Expression]
-        }).then(function (dbExpression) {
-            res.json(dbExpression);
-        });
     },
     // Get route for retrieving a single expression
     findById: function (req, res) {

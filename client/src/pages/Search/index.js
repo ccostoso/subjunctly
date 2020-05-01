@@ -11,24 +11,26 @@ function Search() {
     const [results, setResults] = useState([]);
     const [active, setActive] = useState("");
 
-    // useEffect(() => {
-    //     async function fetchQuery() {
-    //         const response = await API.getExpressions();
-    //         if (!response.ok) {
-    //             throw new Error(
-    //                 `${response.status} ${response.statusText}`
-    //             );
-    //         }
-    //         setResults(response.json());
-    //     }
+    useEffect(() => {
+        async function fetchQuery() {
+            const response = await (await API.getExpressions(search)).json();
+            console.log(response);
+            if (!response.status === 200) {
+                throw new Error(
+                    `${response.status} ${response.statusText}`
+                );
+            }
 
-    //     fetchQuery();
-    // }, [search]);
+            setResults(response);
+        }
+
+        search && fetchQuery();
+    }, [search]);
 
     // useEffect(() => {
     //     async function fetchQuery() {
     //         const response = await API.getExpression(active);
-    //         if (!response.ok) {
+    //         if (!response.status === 200) {
     //             throw new Error(
     //                 `${response.status} ${response.statusText}`
     //             );
@@ -40,14 +42,15 @@ function Search() {
     // }, [active]);
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-md-6">
+        <main className="container mt-4">
+            <section className="row">
+                <div className="card col-md-6">
                     <SearchBar
                         search={search}
                         setSearch={setSearch}
                     />
                     <Results
+                        search={search}
                         results={results}
                         setActive={setActive}
                         active={active}
@@ -58,8 +61,8 @@ function Search() {
                         active={active}
                     />
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
     )
 
 }

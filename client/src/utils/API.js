@@ -2,8 +2,10 @@ import 'whatwg-fetch';
 
 export default {
     // Gets all expressions
-    getExpressions: function () {
-        return fetch('/api/expressions/');
+    getExpressions: function (search) {
+        return fetch('/api/expressions/' + search)
+            // .then(response => response.json())
+            // .then(data => console.log(data));
     },
     // Gets the expressions with the given id
     getExpression: function (name) {

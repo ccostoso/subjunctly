@@ -4,16 +4,24 @@ import "./style.css";
 
 function Results(props) {
     return (
-        <ul class="list-group">
-            {props.results.map(result => {
-                return <ResultListItem 
-                    result={result} 
-                    active={props.active}
-                    setActive={props.setActive}
-                    key={props.result.id}
-                />
-            })}
-        </ul>
+        <section className="card mb-3">
+            <div className="card-header border-bottom-0 bg-white">
+                <h5 className="card-title mb-0">Results</h5>
+            </div>
+            <div className="card-body pt-0">
+                <ul className="list-group">
+                    <li class="list-group-item">Cras justo odio</li>
+                    {props.search && props.results.map(result => {
+                        return <ResultListItem
+                            result={result}
+                            active={props.active}
+                            setActive={props.setActive}
+                            key={result.id}
+                        />
+                    })}
+                </ul>
+            </div>
+        </section>
     )
 }
 

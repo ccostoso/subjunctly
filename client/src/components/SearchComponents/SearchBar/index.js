@@ -3,9 +3,9 @@ import "./style.css";
 
 function SearchBar(props) {
     return (
-        <form>
-            <div className="form-group">
-                <label for="search-bar">Search</label>
+        <form className="card my-3">
+            <div className="form-group card-body">
+                <h5 htmlFor="search-bar">Search</h5>
                 <input 
                     type="text" 
                     className="form-control" 
