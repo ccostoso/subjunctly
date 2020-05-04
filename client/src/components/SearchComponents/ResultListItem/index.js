@@ -3,15 +3,11 @@ import "./style.css";
 
 function ResultListItem(props) {
     return (
-        <li 
+        <li
             className="list-group-item"
             onClick={e => props.setActive(props.result.source_html)}
         >
-            <a
-                
-            >
-                {props.result.name}
-            </a>
+            {props.result.name}
         </li>
     )
 }

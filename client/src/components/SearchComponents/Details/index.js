@@ -9,8 +9,11 @@ function Details(props) {
             </header>
             <div className="card-body">
                 <p><strong>Yes</strong>, "accepter" requires the subjunctive.</p>
-                <blockquote className="bg-light py-2 px-1 rounded"><em>"J’accepte que tu sois toujours en retard."</em></blockquote>
-                <p>I accept that you are always late.</p>
+                <blockquote className="bg-light py-2 px-1 rounded">
+                    <em>J’accepte que tu sois toujours en retard.</em>
+                    <p>I accept that you are always late.</p>
+                </blockquote>
+                
                 <p>{JSON.stringify(props.selected)}</p>
             </div>
         </article>
