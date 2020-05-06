@@ -10,7 +10,6 @@ function Results(props) {
             </div>
             <div className="card-body pt-0">
                 <ul className="list-group">
-                    <li className="list-group-item">Cras justo odio</li>
                     {props.search && props.results.map(result => {
                         return <ResultListItem
                             result={result}

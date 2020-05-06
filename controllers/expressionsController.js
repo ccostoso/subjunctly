@@ -5,15 +5,20 @@ const { Op } = require("sequelize");
 module.exports = {
     // GET route for getting all of the expressions with given parameters
     findWhere: function (req, res) {
-        const query = req.params.id.split(" ").map(string => `%${string}%`)
+        // const query = req.params.id.toLowerCase().split(" ").map(string => `%${string}%`)
+        // const mappedQuery = query.map(str => str.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
+        const query = `%${req.params.id.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}%`
+        console.log("!!!!!!!!!!!");
+        console.log("QUERY", query);
+        console.log("!!!!!!!!!!!");
         if (req.params.id) {
-            console.log("QUERY", query);
             db.Expression.findAll({
                 where: {
-                    source_html: {
-                        [Op.like]: {
-                            [Op.any]: query
-                        }
+                    plain_name: {
+                        [Op.like]: query
+                        // {
+                        //     [Op.any]: mappedQuery
+                        // }
                     }
                 },
                 attributes: ["name", "type", "source_html", "id"],

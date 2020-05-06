@@ -5,9 +5,21 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             unique: true,
         },
-        alt_names: DataTypes.ARRAY(DataTypes.DECIMAL),
+        source_html: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+        },
+        plain_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         type: {
             type: DataTypes.STRING,
+            allowNull: false,
+        },
+        top_desc: {
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         exen_1: {
@@ -18,10 +30,15 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false,
         },
+        first_desc: DataTypes.TEXT,
         exen_2: DataTypes.TEXT,
         exfr_2: DataTypes.TEXT,
+        second_desc: DataTypes.TEXT,
         exen_3: DataTypes.TEXT,
         exfr_3: DataTypes.TEXT,
+        third_desc: DataTypes.TEXT,
+        bottom_desc: DataTypes.TEXT,
+        bottom_desc_2: DataTypes.TEXT,
     });
     return Expression;
 }
