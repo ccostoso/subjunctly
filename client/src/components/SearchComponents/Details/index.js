@@ -6,7 +6,7 @@ function Details(props) {
     console.log(props);
     return (
         <article className="card">
-            <header className={`card-header ${props.selected.type}`}>
+            <header className={`card-header ${props.selected.type} border-bottom-0`}>
                 <h5 className="card-title my-0">{props.selected.name || "Details"}</h5>
             </header>
             <div className="card-body">

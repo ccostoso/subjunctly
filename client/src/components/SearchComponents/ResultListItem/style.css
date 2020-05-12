@@ -1,11 +1,16 @@
+rect {
+    stroke: none;
+    stroke-width: 5;
+}
+
 .oui {
-    background-color: #28a745;
+    fill: #28a745;
 }
 
 .non {
-    background-color: #dc3545;
+    fill: #dc3545;
 }
 
 .dep {
-    background-color: #ffc107;
+    fill: #ffc107;
 }

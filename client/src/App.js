@@ -18,7 +18,7 @@ function App() {
   })
 
   return (
-    <div>
+    <div className="vh-100">
       <Router>
         <Nav />
         <Route exact path="/" render={() => {

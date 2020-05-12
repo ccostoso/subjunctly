@@ -1,11 +1,17 @@
 .oui {
-    background-color: #28a745;
+    background: rgb(0, 217, 21);
+    background: linear-gradient(180deg, rgba(0, 217, 21, 1) 33%, rgba(0, 255, 8, 1) 96%);
+    color: white;
 }
 
 .non {
-    background-color: #dc3545;
+    background: rgb(203, 0, 0);
+    background: linear-gradient(180deg, rgba(203, 0, 0, 1) 33%, rgba(255, 0, 0, 1) 96%);
+    color: white;
 }
 
 .dep {
-    background-color: #ffc107;
+    background: rgb(255, 228, 11);
+    background: linear-gradient(180deg, rgba(255, 228, 11, 1) 33%, rgba(255, 252, 0, 1) 96%);
+    color: black;
 }
