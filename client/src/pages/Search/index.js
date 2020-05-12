@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import SearchBar from "../../components/SearchComponents/SearchBar";
 import Results from "../../components/SearchComponents/Results";
 import Details from "../../components/SearchComponents/Details";

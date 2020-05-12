@@ -37,6 +37,8 @@ function Details(props) {
                 {props.selected.bottom_desc_2 && 
                 <p>{ReactHtmlParser(props.selected.bottom_desc_2)}</p>}
 
+                {props.selected.name && ReactHtmlParser(`<a href="https://www.lawlessfrench.com/subjunctivisor/${props.selected.source_html}">Visit the original Subjunctivisor entry for ${props.selected.name}.</a>`)}
+
                 {/* <p>{JSON.stringify(props.selected)}</p> */}
             </div>
         </article>

@@ -12,6 +12,7 @@ function SearchBar(props) {
                     id="search-bar" 
                     placeholder="Search for an expression" 
                     onChange={e => props.setSearch(e.target.value)}
+                    onSubmit={e => e.preventDefault()}
                     value={props.search}
                 />
             </div>
