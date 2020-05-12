@@ -22,10 +22,9 @@ module.exports = {
                     }
                 },
                 attributes: ["name", "type", "source_html", "id"],
+                limit: 10
             }, 
-            { 
-                limit: 10 
-            }
+            {}
             ).then(function (dbExpression) {
                 res.json(dbExpression);
             })

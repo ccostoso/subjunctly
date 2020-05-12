@@ -3,7 +3,7 @@ import "./style.css";
 
 function SearchBar(props) {
     return (
-        <form className="card my-3">
+        <form className="card mt-0 mb-3">
             <div className="form-group card-body">
                 <h5 htmlFor="search-bar">Search</h5>
                 <input 
@@ -12,7 +12,7 @@ function SearchBar(props) {
                     id="search-bar" 
                     placeholder="Search for an expression" 
                     onChange={e => props.setSearch(e.target.value)}
-                    onSubmit={e => e.preventDefault()}
+                    onKeyDown={e => e.key === "Enter" && e.preventDefault()}
                     value={props.search}
                 />
             </div>

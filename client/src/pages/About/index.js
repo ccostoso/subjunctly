@@ -6,7 +6,7 @@ function About() {
         <main className="container mt-4">
             <section className="row">
                 <div className="card">
-                    <header className="card-header">
+                    <header className="card-header border-bottom-0 bg-white">
                         <h5 className="card-title mb-0">About the Subjunctivisor</h5>
                     </header>
                     <div className="card-body">

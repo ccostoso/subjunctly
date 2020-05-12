@@ -51,7 +51,7 @@ function Search() {
     return (
         <main className="container mt-4">
             <section className="row">
-                <div className="card col-md-6">
+                <div className="col-md-6">
                     <SearchBar
                         search={search}
                         setSearch={setSearch}
