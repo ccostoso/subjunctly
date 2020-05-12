@@ -13,7 +13,7 @@ function App() {
   })
 
   useEffect(() => {
-    
+
   })
 
   return (
@@ -21,11 +21,17 @@ function App() {
       <Router>
         <Nav />
         <Route path="/" render={() => {
-          return <Search
-            user={user}
-          />
-        }}
+            return <Search
+              user={user}
+            />
+          }}
         />
+        {/* <Route path="/about" render={() => {
+            return <About
+              user={user}
+            />
+          }}
+        /> */}
       </Router>
     </div>
   )

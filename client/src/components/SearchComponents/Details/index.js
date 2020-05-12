@@ -1,4 +1,5 @@
 import React from "react";
+import ReactHtmlParser from "react-html-parser";
 import "./style.css";
 
 function Details(props) {
@@ -9,7 +10,7 @@ function Details(props) {
                 <h5 className="card-title my-0">{props.selected.name || "Details"}</h5>
             </header>
             <div className="card-body">
-                <p>{props.selected.top_desc}</p>
+                <p>{ReactHtmlParser(props.selected.top_desc)}</p>
                 <blockquote className="bg-light py-2 px-1 rounded">
                     <em>{props.selected.exfr_1}</em>
                     <br />
@@ -31,10 +32,10 @@ function Details(props) {
                 </blockquote>}
 
                 {props.selected.bottom_desc && 
-                <p>{props.selected.bottom_desc}</p>}
+                <p>{ReactHtmlParser(props.selected.bottom_desc)}</p>}
 
                 {props.selected.bottom_desc_2 && 
-                <p>{props.selected.bottom_desc_2}</p>}
+                <p>{ReactHtmlParser(props.selected.bottom_desc_2)}</p>}
 
                 {/* <p>{JSON.stringify(props.selected)}</p> */}
             </div>
