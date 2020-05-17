@@ -6,6 +6,6 @@
     "use_env_variable": "DEVDB_URL"
   },
   "production": {
-    "use_env_variable": "PRODDB_URL"
+    "use_env_variable": "DATABASE_URL"
   }
 }
