@@ -37,6 +37,9 @@ module.exports = (sequelize, DataTypes) => {
         exen_3: DataTypes.TEXT,
         exfr_3: DataTypes.TEXT,
         third_desc: DataTypes.TEXT,
+        exen_4: DataTypes.TEXT,
+        exfr_4: DataTypes.TEXT,
+        fourth_desc: DataTypes.TEXT,
         bottom_desc: DataTypes.TEXT,
         bottom_desc_2: DataTypes.TEXT,
     });

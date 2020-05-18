@@ -1,17 +1,17 @@
 .oui {
     background: rgb(28, 205, 0);
-    background: linear-gradient(180deg, rgba(28, 205, 0, 1) 33%, rgba(41, 241, 0, 1) 96%);
+    background: linear-gradient(0deg, rgba(28, 205, 0, 1) 33%, rgba(41, 241, 0, 1) 96%);
     color: white;
 }
 
 .non {
     background: rgb(203, 0, 0);
-    background: linear-gradient(180deg, rgba(203, 0, 0, 1) 33%, rgba(255, 0, 0, 1) 96%);
+    background: linear-gradient(0deg, rgba(203, 0, 0, 1) 33%, rgba(255, 0, 0, 1) 96%);
     color: white;
 }
 
 .dep {
     background: rgb(255, 228, 11);
-    background: linear-gradient(180deg, rgba(255, 228, 11, 1) 33%, rgba(255, 252, 0, 1) 96%);
+    background: linear-gradient(0deg, rgba(255, 228, 11, 1) 33%, rgba(255, 252, 0, 1) 96%);
     color: black;
 }
