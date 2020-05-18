@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-db.sequelize.sync({ force: false }).then(function () {
+db.sequelize.sync({ force: true }).then(function () {
     app.listen(PORT, () => {
         console.log("🌎 App listening on port:", PORT);
     })
