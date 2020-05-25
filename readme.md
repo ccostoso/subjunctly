@@ -8,9 +8,9 @@ This app provides "search box" functionality to Lawless's French Subjunctivisor.
 
 ![Colors](readme/colors.gif)
 
-A **green** square indicates that the subjunctive mood **is required**.
-A **red** square indicates that the subjunctive mood **is not to be used**.
-A **yellow** square indicates that the subjunctive mood **may or may not be used**, depending on context.
+- A **green** square indicates that the subjunctive mood **is required**.
+- A **red** square indicates that the subjunctive mood **is not to be used**.
+- A **yellow** square indicates that the subjunctive mood **may or may not be used**, depending on context.
 
 ![Details](readme/admettre-details.gif)
 
