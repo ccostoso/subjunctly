@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+// import { useCookies } from "react-cookie";
 import Nav from "./components/UniversalComponents/Nav";
 import Search from "./pages/Search";
 import About from "./pages/About";
@@ -7,15 +8,18 @@ import './App.css';
 
 function App() {
 
-  const [user, setUser] = useState({
-    user: {
-      name: "",
-    }
-  })
+  // const [favorites, setFavorites] = useState([]);
 
-  useEffect(() => {
+  // const [cookies, setCookie, removeCookie] = useCookies(['pern-subj-favs']);
 
-  })
+  // function onAddFavorite(newFavorite) {
+  //   setFavorites
+  //   setCookie('favorite', newFavorite, { path: '/' });
+  // }
+
+  // useEffect(() => {
+
+  // })
 
   return (
     <div className="vh-100">
