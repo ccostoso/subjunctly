@@ -28,7 +28,9 @@ The PERN-Subjunctivisor app utilizes:
 In addition, data was collected from entries on Laura K. Lawless's website using Cheerio.
 
 # Where can I find the app deployed?
-Due to a request from Laura K. Lawless, this app is not deployed on Heroku. However, you can install it on your own computer Terminal (Mac OS X or Linux) or using Git Bash (Windows 10) with the following command:
+Due to a request from Laura K. Lawless, this app is not deployed on Heroku. However, you can install it on your own computer Terminal (Mac OS X or Linux) or using Git Bash (Windows 10). Please note that the app requires [PostgreSQL](http://postgresql.org/) and [Node.js](https://nodejs.org/) installed on your computer.
+
+You can install the app by using:
 
 ```bash
 git clone https://github.com/ccostoso/PERN-Subjunctivisor.git
