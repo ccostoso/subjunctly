@@ -34,6 +34,25 @@ Due to a request from Laura K. Lawless, this app is not deployed on Heroku. Howe
 git clone https://github.com/ccostoso/PERN-Subjunctivisor.git
 ```
 
+From there, run the following commands:
+```bash
+npm i
+```
+
+followed by
+
+```bash
+sequelize db:seed:all
+```
+
+and finally:
+
+```bash
+npm start
+```
+
+To stop the app, type CTRL+C in Terminal/Git Bash.
+
 # What's next?
 The current app is at its MVP stage, but in the future, use of cookies will allow users to "favorite" clauses for the future.
 
