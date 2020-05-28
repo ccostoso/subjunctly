@@ -8,6 +8,8 @@ import './App.css';
 
 function App() {
 
+  const [user, setUser] = useState({});
+
   // const [favorites, setFavorites] = useState([]);
 
   // const [cookies, setCookie, removeCookie] = useCookies(['pern-subj-favs']);

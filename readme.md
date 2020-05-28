@@ -28,7 +28,11 @@ The PERN-Subjunctivisor app utilizes:
 In addition, data was collected from entries on Laura K. Lawless's website using Cheerio.
 
 # Where can I find the app deployed?
-The app can be found on Heroku at https://pern-subjunctivisor.herokuapp.com/
+Due to a request from Laura K. Lawless, this app is not deployed on Heroku. However, you can install it on your own computer Terminal (Mac OS X or Linux) or using Git Bash (Windows 10) with the following command:
+
+```bash
+git clone https://github.com/ccostoso/PERN-Subjunctivisor.git
+```
 
 # What's next?
 The current app is at its MVP stage, but in the future, use of cookies will allow users to "favorite" clauses for the future.
