@@ -1,3 +1,13 @@
+@keyframes to-left {
+    from {position: relative; left: 20px}
+    to {position: relative; left: 0px}
+}
+
+.to-left {
+    animation-name: to-left;
+    animation-duration: .5s;
+}
+
 .oui {
     background: rgb(28, 205, 0);
     background: linear-gradient(0deg, rgba(28, 205, 0, 1) 33%, rgba(41, 241, 0, 1) 96%);

@@ -9,12 +9,13 @@ function Results(props) {
                 <h5 className="card-title mb-0">Results</h5>
             </div>
             <div className="card-body pt-0">
-                <ul className="list-group">
+                <ul className="list-group list-group-flush">
                     {props.search && props.results.map(result => {
                         return <ResultListItem
                             result={result}
                             active={props.active}
                             setActive={props.setActive}
+                            toLeft={props.toLeft}
                             key={result.id}
                         />
                     })}

@@ -10,6 +10,10 @@ function Search() {
     const [results, setResults] = useState([]);
     const [active, setActive] = useState("");
     const [selected, setSelected] = useState({});
+    const [toLeft, setToLeft] = useState({
+        listItems: false,
+        detailCard: false,
+    });
 
     useEffect(() => {
         async function fetchQuery() {
@@ -25,6 +29,9 @@ function Search() {
         }
 
         search && fetchQuery();
+
+        setToLeft({...toLeft, listItems: true});
+        setTimeout(() => {setToLeft({...toLeft, listItems: false})}, 400);
     }, [search]);
 
     useEffect(() => {
@@ -39,6 +46,9 @@ function Search() {
 
             const json = await response.json();
             setSelected(json);
+
+            setToLeft({...toLeft, detailCard: true});
+            setTimeout(() => {setToLeft({...toLeft, detailCard: false})}, 400);
         }
 
         active && fetchSelected();
@@ -61,12 +71,14 @@ function Search() {
                         results={results}
                         setActive={setActive}
                         active={active}
+                        toLeft={toLeft}
                     />
                 </div>
                 <div className="col-md-6">
                     <Details
                         active={active}
                         selected={selected}
+                        toLeft={toLeft}
                     />
                 </div>
             </section>
